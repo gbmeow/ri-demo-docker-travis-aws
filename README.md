@@ -340,7 +340,7 @@ choose to encrypt
 ```
 $osxterm: travis env set DOCKER_EMAIL <youremail>
 $osxterm: travis env set DOCKER_USERNAME <yourusername>
-$osxterm: travis env set <yourpassword>
+$osxterm: travis env set DOCKER_PASSWORD <yourpassword>
 ```
 
 
