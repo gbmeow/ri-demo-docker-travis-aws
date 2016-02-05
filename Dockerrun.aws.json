@@ -16,7 +16,7 @@
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 80, //must be - PORT: 80 - See load balancer below for explanation
+          "hostPort": 80, //must be - PORT: 80 - See load balancer below for explanation -
           "containerPort": 8080
         }
       ],
