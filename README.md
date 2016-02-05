@@ -93,6 +93,19 @@ Roadmap check:
 [X] Cloned the repo
 [X] Added Role/Policy
 
+
+If you do not have the latest eb cli, then upgrade - or install the latest. 
+REASON: I ran into some configuration issue, because of an older version. Do not waste your time and just update.
+
+To install EB on OSX:
+```
+$osxterm: curl -s https://s3.amazonaws.com/elasticbeanstalk-cli-resources/install-ebcli.py | python
+```
+
+[Installing EB CLI for other platforms.](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
+
+
+Now we are ready to init the environment settings
 ```
 $ eb init
 ```
@@ -111,7 +124,7 @@ whenever an instance is added.
 Dockerrun.aws.json
 ```
 {
-  "AWSEBDockerrunVersion": 2,
+  "AWSEBDockerrunVersion": "2",
     "volumes": [
     {
       "name": "db",
@@ -123,7 +136,7 @@ Dockerrun.aws.json
   "containerDefinitions": [
     {
       "name": "server",
-      "image": "georgebatalinski/docker-centos-simple-server-two:latest",
+      "image": "georgebatalinski/rate-instructor-demo:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -219,20 +232,10 @@ Roadmap check:
 [] Added Role/Policy
 [] There is a file named Dockerrun.aws.json in your main repo 
 
-If you do not have the latest eb cli, then upgrade. REASON: I ran into some configuration issue, because of 
-an older version. Do not waste your time and just update.
 
-To install EB on OSX:
-```
-$osxterm: curl -s https://s3.amazonaws.com/elasticbeanstalk-cli-resources/install-ebcli.py | python
-```
-
-[Installing EB CLI for other platforms.](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
-
-
-
-Once you have EB installed, run or open the project on our local machine.
-eb local will use boot2docker to provide you the application without provisioning any AWS resources.
+Next - let's see if we can run our app locally. 
+Here are 2 commands that run or open the project on our local machine.
+eb local will use boot2docker to provide you the application locally.
 
 ```
 $osxterm: eb local run 

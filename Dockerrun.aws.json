@@ -1,5 +1,5 @@
 {
-  "AWSEBDockerrunVersion": "2",
+  "AWSEBDockerrunVersion": 2,
     "volumes": [
     {
       "name": "db",
@@ -11,12 +11,12 @@
   "containerDefinitions": [
     {
       "name": "server",
-      "image": "georgebatalinski/docker-centos-simple-server-two:latest",
+      "image": "georgebatalinski/rate-instructor-demo:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 80, 
+          "hostPort": 80,
           "containerPort": 8080
         }
       ],
