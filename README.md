@@ -94,23 +94,6 @@ Roadmap check:
 [X] Added Role/Policy
 
 
-If you do not have the latest eb cli, then upgrade - or install the latest. 
-REASON: I ran into some configuration issue, because of an older version. Do not waste your time and just update.
-
-To install EB on OSX:
-```
-$osxterm: curl -s https://s3.amazonaws.com/elasticbeanstalk-cli-resources/install-ebcli.py | python
-```
-
-[Installing EB CLI for other platforms.](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
-
-
-Now we are ready to init the environment settings
-```
-$ eb init
-```
-
-
 ### [] Create a File - Dockerrun.aws.json 
 NOTE: v2 is for multi-container (more than one container). 
 This file defines the Amazon ECS task definition used to configure container instances in the environment.
@@ -218,7 +201,20 @@ NOTE: If you cannot set this up or require non-default port (i.e., unhappy with 
    
 2. Elastic Beanstalk - and let eb - upload your files to S3 and create your environment.
 
-```   
+If you do not have the latest eb cli, then upgrade - or install the latest. 
+REASON: I ran into some configuration issue, because of an older version. Do not waste your time and just update.
+
+To install EB on OSX:
+```
+$osxterm: curl -s https://s3.amazonaws.com/elasticbeanstalk-cli-resources/install-ebcli.py | python
+```
+
+[Installing EB CLI for other platforms.](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
+
+
+Now we are ready to init the environment settings
+```
+$ eb init 
 $ eb create dev-env
 ```
 
@@ -299,7 +295,7 @@ Sign up for a Travis account.
 Once you synced your account on https://travis-ci.org/ with your Git repo, the rest is two simple steps away.  
 
 
-1. Create a file  .travis.yml in our local repo.
+1. Create a file .travis.yml in our local repo.
 
 From Line:1 of the file, copy and paste this into .travis.yml
 ```
@@ -315,9 +311,12 @@ services:
 - docker
 
 before_install:
+- npm install --test
+- npm test
+- npm install --production
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-- docker build -t georgebatalinski/docker-centos-simple-server-two:latest .
-- docker push georgebatalinski/docker-centos-simple-server-two
+- docker build -t georgebatalinski/rate-instructor-demo:latest
+- docker push georgebatalinski/rate-instructor-demo
 
 ```
 

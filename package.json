@@ -4,6 +4,7 @@
   "description": "Simple webapp for rating your flight instructors",
   "main": "index.js",
   "scripts": {
+    "postinstall" : "webpack",
     "start": "node server.js",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
