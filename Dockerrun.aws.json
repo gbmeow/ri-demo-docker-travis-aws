@@ -16,14 +16,14 @@
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 80, //must be - PORT: 80 - See load balancer below for explanation -
+          "hostPort": 80, 
           "containerPort": 8080
         }
       ],
       "mountPoints": [
         {
           "sourceVolume": "db",
-          "containerPath": "/src/money" //We are only mounting - "volumes" NOT creating new volumes
+          "containerPath": "/src/money"
         }
       ],
       "links": [

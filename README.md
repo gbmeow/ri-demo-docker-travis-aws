@@ -95,11 +95,7 @@ Roadmap check:
 
 ```
 $ eb init
-$ eb create dev-env
 ```
-
-You got it. Maybe it took a bit longer over our allocated time of 5 minutes, but it was not our fault. It was 
-all Elastic Beanstalk provisioning the 'dev-env' (It can take up to approximately 12 minutes to spin the environment.).
 
 
 ### [] Create a File - Dockerrun.aws.json 
@@ -206,6 +202,15 @@ In your Dockerrun.aws.json,you can setup the port mapping to:
 NOTE: If you cannot set this up or require non-default port (i.e., unhappy with port 80), check out 
 [Using Multiple Elastic Load Balancing Listeners.](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker_ecs.html)
    
+   
+2. Elastic Beanstalk - and let eb - upload your files to S3 and create your environment.
+
+```   
+$ eb create dev-env
+```
+
+You got it. Maybe it took a bit longer over our allocated time of 5 minutes, but it was not our fault. It was 
+all Elastic Beanstalk provisioning the 'dev-env' (It can take up to approximately 12 minutes to spin the environment.).
 
 ### []Test Your EB CLI if You are Testing Your App Locally 
 
