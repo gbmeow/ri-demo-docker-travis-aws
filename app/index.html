@@ -1,0 +1,37 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="style/main.css">
+  <title>Angular App from Docker</title>
+</head>  
+<body ng-app="app" ng-controller="HomeCtrl as ctrl">  
+  <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+    <div flex="50" flex-sm="100" flex-xs="100" layout="column" ng-if="!ctrl.instructors">
+        <span class="md-headline">No data inside your database - add some</span>
+    </div>
+    <div flex="50" flex-sm="100" flex-xs="100" layout="column" ng-if="ctrl.instructors">
+        <md-card ng-repeat="instructor in ctrl.instructors">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Name: {{instructor.name}}</span>
+            <span class="md-subhead">Hours Flown: {{instructor.hoursflown}}</span>
+            <span class="md-subhead">Number of Likes: {{instructor.numberOfLikes}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+          <div class="md-media-xl card-media"></div>
+          <md-card-actions layout="column">
+            <md-button class="md-icon-button" ng-click="ctrl.addLike(instructor._id)" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+          </md-card-actions>
+        </md-card-content>
+      </md-card>
+    </div>
+    </md-content> 
+<script src="bundle.js"></script>  
+</body>  
+</html> 

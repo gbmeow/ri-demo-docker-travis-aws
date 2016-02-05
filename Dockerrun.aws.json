@@ -1,0 +1,52 @@
+{
+  "AWSEBDockerrunVersion": 2,
+    "volumes": [
+    {
+      "name": "db",
+      "host": {
+        "sourcePath": "/src"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "server",
+      "image": "georgebatalinski/docker-centos-simple-server-two:latest",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80, //must be - PORT: 80 - See load balancer below for explanation
+          "containerPort": 8080
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "db",
+          "containerPath": "/src/money" //We are only mounting - "volumes" NOT creating new volumes
+        }
+      ],
+      "links": [
+        "db"
+      ]
+    },
+    {
+      "name": "db",
+      "image": "mongo",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 27017,
+          "containerPort": 27017
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "db",
+          "containerPath": "/src/money"
+        }
+      ]
+    }
+  ]
+}

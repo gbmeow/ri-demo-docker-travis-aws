@@ -1,0 +1,50 @@
+{
+  "name": "ri-demo-docker-travis-aws",
+  "version": "1.0.0",
+  "description": "Simple webapp for rating your flight instructors",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgebatalinski/ri-demo-docker-travis-aws.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgebatalinski/ri-demo-docker-travis-aws/issues"
+  },
+  "homepage": "https://github.com/georgebatalinski/ri-demo-docker-travis-aws#readme",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-animate": "^1.4.8",
+    "angular-aria": "^1.4.8",
+    "angular-material": "^1.0.2",
+    "angular-mocks": "^1.4.8",
+    "express": "^4.13.3",
+    "path": "^0.12.7",
+    "serve-static": "^1.10.2",
+    "http-proxy": "^1.12.0",
+    "mongodb": "^2.1.3"
+  },
+  "devDependencies": {
+     "babel": "^6.3.26",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "^3.4.1",
+    "karma": "^0.13.19",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.1",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.4",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1",
+    "karma-phantomjs-launcher": "^0.2.3",
+    "style-loader": "^0.13.0",
+    "phantomjs": "^1.9.19"   
+  }
+}
