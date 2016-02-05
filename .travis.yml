@@ -9,9 +9,12 @@ env:
 services:
 - docker
 before_install:
-- npm install --test
+- export NODE_ENV=test
+- npm install
+- webpack
 - npm test
-- npm install --production
+- export NODE_ENV=production
+- webpack
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker build -t georgebatalinski/rate-instructor-demo:latest
 - docker push georgebatalinski/rate-instructor-demo

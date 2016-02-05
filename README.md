@@ -351,7 +351,7 @@ git push origin master
 ```
 
 Check your Travis dashboard 
-    and see the GREEN status .
+    and see the GREEN status 
 
 Isn't that your favorite color?  :)
 
