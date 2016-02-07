@@ -30,7 +30,7 @@ deploy:
     secure: H8isU8S57SOkhgGOk6AIRfkztJvihB429UIujKpw8PJN/9JL6nTP1J/NEDkZWR5W4mPUZ8auQj5LkN2I4MXZEYVDC+b6EWM8MAbaubNJ0PIC+0ZewtBe/FPdN/n9CWWzG46oFUZz14Zneaj/TR9VEbb4NafTBQtsWCPsgPadskNP5J1DyJJoOwH2W5S87EtCC5WtLugz05dw/fP9EQkNFtlYalyRjR+C+REz+RwPX6yit0V/83M+IREymP2MZZK5VGPEqgTfrCEZrYAvnVZeehCVB3ESISttrIeb+U2fYEjCBf2aTXs/mROrN4VL+Yg6dZHvOnRv19wsuL6aB/Bn4VlmwQTQBbeh3uc+hcF4q9XikNHjFzMIkP2BHawxBJmgXYbsafN+ywElPNq5bz4kl2B0GgbtCXVoIKOcvj+fVb65Ta21CcTCOOf/OAFu/FScNDQP3x+zy1nCQsrR+1YWcgPdbY7jVnzmYTgZPkeREXjDWG3JvduTy3Zn4V2bGKdYHn5HS1taQGcpiPuj3v6XeMcP3cV7t+a5554sDe/5PNow3FlNDQeEp4MwHd7JNfWq7PlrSOr8/Wh1cJIr39T/hYFm9QaoK5SU2d8cufLesHxZurZYKxb9dL8c1tjLreRPYyumQQOHF6/HLe0wmfagzQc2XI+4epCsOsUgDsoGuxo=
   region: us-east-1
   bucket_name: elasticbeanstalk-us-east-1-362999620065
-  app: french-app
-  env: nice-dev
+  app: instant-demo 
+  env: instantDemo-env
   on:
     repo: georgebatalinski/ri-demo-docker-travis-aws

@@ -11,7 +11,7 @@ app.use(serveStatic(__dirname + '/app'));
 
 var MongoClient = require('mongodb').MongoClient;
 
-var url = process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost'
+var url = 'db' || 'localhost'
 var port = process.env.DB_1_PORT_27017_TCP_PORT || '27017';
 
 // Constants
@@ -27,7 +27,7 @@ app.get('/api/instructors', function (req, res) {
     if (err) {
       throw err;
     }
-    res.send(result);
+    res.send(result, url, port);
   });
 }); 
 });
