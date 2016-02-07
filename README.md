@@ -412,7 +412,7 @@ start updating.
 ```
 $osxterm: eb ssh <name of the env> 
 $: sudo docker ps 
-$: sudo exec -it <CONTAINERID running CENTOS image> /bin/bash 
+$: sudo docker exec -it <CONTAINERID running CENTOS image> /bin/bash 
 ```
 
 Open the yum repo file
@@ -431,7 +431,7 @@ enabled=1
 
 Install the mongo shell 
 ```
-$ root: yum install -y mongodb-org
+$ root: yum install -y mongodb-org-shell
 ```
 [Ref for Mongo Install](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat/)
 
@@ -448,6 +448,9 @@ $ root: cat /etc/hosts
 ```
 
 Now the most rewarding part - add data to our DB 
+```
+$ root: mongo db:27017
+```
 
 In our Single Page App—Remember rateYourInstructor.io (ofcourse io)—we will need the following data in order for the Angular template to show anything in the following places:
 
