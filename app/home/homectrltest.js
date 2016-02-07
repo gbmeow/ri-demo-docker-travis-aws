@@ -5,6 +5,7 @@ module.exports = function(ngModule) {
           window.module(ngModule.name);
       });
       beforeEach(inject(function($controller) {
+          console.log($controller);
           ctrl = $controller('HomeCtrl');
       }));
       
