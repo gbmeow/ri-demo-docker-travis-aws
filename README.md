@@ -353,9 +353,6 @@ git push origin master
 Check your Travis dashboard 
     and see the GREEN status 
 
-Isn't that your favorite color?  :)
-
-
 ## General Troubleshooting Techniques for Docker Containers
 
 ### Docker Specific 

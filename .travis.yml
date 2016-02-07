@@ -15,9 +15,14 @@ before_install:
 - npm test
 - export NODE_ENV=production
 - webpack
+
+install: true
+
+script: 
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker build -t georgebatalinski/rate-instructor-demo:latest .
 - docker push georgebatalinski/rate-instructor-demo
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAJ6FTIIMUUT5H73NQ
